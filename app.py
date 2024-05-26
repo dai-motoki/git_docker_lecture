@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 
 st.title('簡易データ分析アプリ')
 
-# データアップロード
-uploaded_file = st.file_uploader('CSVファイルをアップロード', type=['csv'])
+# サイドバーにデータアップロード
+st.sidebar.title('サイドバー')
+uploaded_file = st.sidebar.file_uploader('CSVファイルをアップロード', type=['csv'])
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.write('データフレームの表示')
@@ -14,7 +15,6 @@ if uploaded_file:
     # データ前処理
     st.write('データの基本統計量')
     st.write(df.describe())
-    
     
     # データ可視化
     st.write('データの可視化')

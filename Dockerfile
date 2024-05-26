@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 
 # Streamlitの実行コマンド
-CMD ['streamlit', 'run', 'app.py', '--server.port=8501', '--server.enableCORS=false']
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.enableCORS=false"]
